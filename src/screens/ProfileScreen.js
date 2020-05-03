@@ -20,8 +20,8 @@ export default class ProfileScreen extends React.Component {
             // fontFamily: "lobster_regular",
             fontSize: 22
         },
-        headerRight: <View />,
-        headerLeft: <View />
+        headerRight: () => <View />,
+        headerLeft: () => <View />
     });
 
     state = {

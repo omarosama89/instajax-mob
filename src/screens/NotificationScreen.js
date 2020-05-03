@@ -7,8 +7,8 @@ export default class NotificationScreen extends React.Component {
     static navigationOptions = ({ navigation }) => ({
         title: "Notification",
         headerTitleStyle: styles.headerText,
-        headerRight: <View />,
-        headerLeft: <View />
+        headerRight: () => <View />,
+        headerLeft: () => <View />
     });
 
     constructor(props) {

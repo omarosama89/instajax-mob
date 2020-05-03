@@ -11,8 +11,8 @@ export default class CameraScreen extends React.Component {
             // fontFamily: "lobster_regular",
             fontSize: 22
         },
-        headerRight: <View />,
-        headerLeft: <View />
+        headerRight: () => <View />,
+        headerLeft: () => <View />
     });
 
     render() {

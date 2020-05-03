@@ -14,9 +14,10 @@ import { createAppContainer } from 'react-navigation';
 import {
     Foundation,
     Feather,
-    MaterialIcons,
-    Ionicons
+    MaterialIcons
 } from "@expo/vector-icons";
+import Ionicons from 'react-native-vector-icons/Ionicons'
+
 import CameraScreen from "./screens/CameraScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import NotificationScreen from "./screens/NotificationScreen";
@@ -42,63 +43,32 @@ const NotificationStack = createStackNavigator({
 const AppStack = createBottomTabNavigator(
     {
         CameraStack: {
-            screen: CameraStack
+            screen: CameraStack,
+            navigationOptions: {
+                tabBarIcon: () => <Ionicons name="ios-person" size={40} />
+            }
         },
         NotificationStack: {
-            screen: NotificationStack
+            screen: NotificationStack,
+            navigationOptions: {
+                tabBarIcon: () => <Ionicons name="ios-add-circle" size={40} />
+            }
         },
         ProfileStack: {
-            screen: ProfileStack
+            screen: ProfileStack,
+            navigationOptions: {
+                tabBarIcon: () => <Ionicons name="ios-list" size={40} />
+            }
         }
     },
     {
-        navigationOptions: ({ navigation }) => ({
-            tabBarIcon: ({ focused }) => {
-                const { routeName } = navigation.state;
-                let iconName;
-                if (routeName === "CameraStack") {
-                    return (
-                        <MaterialIcons
-                            name="add-box"
-                            size={28}
-                            color={focused ? "black" : "gray"}
-                        />
-                    );
-                }
-                if (routeName === "NotificationStack") {
-                    return (
-                        <Foundation
-                            name="heart"
-                            size={28}
-                            color={focused ? "black" : "gray"}
-                        />
-                    );
-                }
-                if (routeName === "ProfileStack") {
-                    return (
-                        <Ionicons
-                            name="md-person"
-                            size={28}
-                            color={focused ? "black" : "gray"}
-                        />
-                    );
-                }
-            }
-        }),
         tabBarOptions: {
-            showLabel: false
+            showLabel: false,
+            activeTintColor: 'balck',
+            inactiveTintColor: 'gray'
         }
     }
 );
-
-// const AppNavigation = createSwitchNavigator(
-//     {
-//         AppStack: { screen: AppStack }
-//     },
-//     {
-//         initialRouteName: "AppStack"
-//     }
-// );
 
 const Routes = createAppContainer(AppStack);
 // () => < createAppContainer(AppStack) />;
