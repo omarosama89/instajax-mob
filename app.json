@@ -1,0 +1,17 @@
+{
+  "name": "instajax-mob",
+  "displayName": "instajax-mob",
+  "expo": {
+    "name": "instajax-mob",
+    "slug": "instajax-mob",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
